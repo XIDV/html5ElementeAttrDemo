@@ -20,8 +20,10 @@ body > * {
 }
 
 .mainWrapper {
+    max-width: 1200px;
     display: flex;
     flex-wrap: wrap;
+    margin: 0 auto;
 }
 
 header {
@@ -33,6 +35,12 @@ header {
 
 .headerTitle {
     font-size: 3rem;
+    margin: 0 0 2rem 0;
+}
+
+.headerSubtitle {
+    font-weight: bold;
+    font-variant: small-caps;
 }
 
 .mainNav {
