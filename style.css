@@ -31,6 +31,7 @@ body > * {
 
 header {
     width: 100%;
+    text-align: right;
     color: white;
     background-color: darkblue;
     padding: 2rem;
@@ -50,12 +51,41 @@ header {
     width: 20%;
 }
 
+.navList {
+    padding: 0;
+    margin: 2rem;
+}
+
+.nli {
+    display: block;
+}
+
+.mainNav .navLink {
+    display: block;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 1rem 0;
+    transition: all 300ms ease-in-out;
+}
+
+.mainNav .navLink:link,
+.mainNav .navLink:visited {
+    color: white;
+}
+
+.mainNav .navLink:hover,
+.mainNav .navLink:focus {
+    color: red;
+    text-decoration: underline;
+}
+
 main {
     flex: 1;
     padding: 0 2rem;
 }
 
 .sectionHeader {
+    text-align: left;
     color: darkblue;
     background: none;
     padding: 2rem 0 2rem 0;
