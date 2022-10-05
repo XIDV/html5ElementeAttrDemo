@@ -14,12 +14,14 @@ html {
 
 body {
     font: 10px sans-serif;
+    background-color: black;
     padding: 0;
     margin: 0;
 }
 
 body > * {
     font-size: var(--defautlFontSize);
+    background-color: white;
 }
 
 .mainWrapper {
@@ -137,6 +139,19 @@ details td {
 
 button {
     margin: 0 0 2rem 0;
+}
+
+.demoFigure {
+    width: 50%;
+    margin: 2rem auto;
+}
+
+.demoFigure img {
+    width: 100%;
+}
+
+.demoFigure figcaption {
+    font-style: italic;
 }
 
 .articleAside {
