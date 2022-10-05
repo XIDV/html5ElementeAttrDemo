@@ -135,6 +135,10 @@ details td {
     padding: .5rem 1rem;
 }
 
+button {
+    margin: 0 0 2rem 0;
+}
+
 .articleAside {
     color: white;
     font: bold small-caps 1rem sans-serif;

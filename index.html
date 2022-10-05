@@ -24,9 +24,9 @@
             </header>
             <nav class="mainNav">
                 <ul class="navList">
-                    <li class="nli"><a href="timeAndDateTime" class="navLink">Das Element <code>time</code> und das Attribut <code>datetime</code></a></li>
-                    <li class="nli"><a href="detailsAndSummary" class="navLink">Ein- und Ausblenden von Inhalten</a></li>
-                    <li class="nli"><a href="#" class="navLink">Navlink 3</a></li>
+                    <li class="nli"><a href="#timeAndDateTime" class="navLink">Das Element <code>time</code> und das Attribut <code>datetime</code></a></li>
+                    <li class="nli"><a href="#detailsAndSummary" class="navLink">Ein- und Ausblenden von Inhalten</a></li>
+                    <li class="nli"><a href="#dialogDemonstration" class="navLink">(Modale) Fenster mit <code>dialog</code></a></li>
                     <li class="nli"><a href="#" class="navLink">Navlink 4</a></li>
                 </ul>
             </nav>
@@ -80,14 +80,30 @@
                             <p class="artAsideContent">... finden Sie unter <a href="https://www.w3schools.com/tags/tag_details.asp" class="artAsideLink" target="_blank">https://www.w3schools.com/tags/tag_details.asp</a>.</p>
                         </aside>
                     </article>
-                    <article class="demoArticle">
-                        <h2>Ein Demo-Article</h2>
-                        <p class="articleDescription">Dies ist ein Container vom Typ <code>article</code></p>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus quisquam, optio hic ipsum dolore magni quo non dolorum quod consequuntur assumenda delectus voluptas et aut impedit rerum ipsam doloremque porro.
-                        </p>
+                    <article class="demoArticle" id="dialogDemonstration">
+                        <h2>(Modale) Fenster mit <code>dialog</code></h2>
+                        <p class="articleDescription">Mit dem <code>dialog</code>-Element können Fenster erzeugt, Warnungen/Hinweise ausgegeben werden und ggf. Nutzereingaben angefordert werden.</p>
+                        <p>Wird das <code>dialog</code>-Element mit dem Attribut <code>open</code> verwendet, öffnet sich das Dialogfenster beim Laden der Seite (wie hier demonstriert) automatisch.</p>
+                        <dialog open id="demoDialog">
+                            <h2>Das ist ein Dialog</h2>
+                            <p>Die Verarbeitung bzw. Steuerung erfolgt mittels JavaScript.
+                            </p>
+                            <button type="button" id="demoDialogClose">Schließen</button>
+                        </dialog>
+
+                        <p>Alternaternativ kann ein Dialog auch durch User-Eingabe aktiv getriggert werden. Hier ab Beispiel eines modalen Dialogs.</p>
+                        <button type="button" id="openModalDialog">Modal-Dialog öffnen</button>
+                        <dialog id="demoModalDialog">
+                            <h2>Das ist ein modaler Dialog</h2>
+                            <p>Die Seite ist so lange gesperrt bis Sie die Checkbox aktivieren und dann auf den Schließen-Button klicken!</p>
+                            <label for="wantRealyClose">Wirklich schließen?</label>
+                            <input type="checkbox" id="wantRealyClose">
+                            <button type="button" id="demoDialogCloseModal">Schließen</button>
+                        </dialog>
                         <aside class="articleAside">
                             <h3 class="artAsideTitle">Weitere Infos ...</h3>
-                            <p class="artAsideContent">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, id ipsum nisi dolorem magnam rerum incidunt ipsam dolor! Ab obcaecati earum quis hic et nam temporibus incidunt natus sed assumenda.</p>
+                            <p class="artAsideContent">... finden Sie unter <a href="https://www.w3schools.com/tags/tag_dialog.asp" class="artAsideLink">https://www.w3schools.com/tags/tag_dialog.asp</a></p>
+                            <p class="artAsideContent">... und <a href="https://www.w3schools.com/jsref/dom_obj_dialog.asp" class="artAsideLink">https://www.w3schools.com/jsref/dom_obj_dialog.asp</a>.</p>
                         </aside>
                     </article>
                     <article class="demoArticle">
