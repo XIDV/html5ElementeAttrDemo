@@ -154,6 +154,10 @@ button {
     font-style: italic;
 }
 
+#demoDefineAttr {
+    margin: 0 0 2rem 0;
+}
+
 .articleAside {
     color: white;
     font: bold small-caps 1rem sans-serif;

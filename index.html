@@ -129,6 +129,36 @@
                         </aside>
                     </article>
                     
+                    <article class="demoArticle" id="defineAttr">
+                        <h2>Attribute selbst definieren</h2>
+                        <p class="articleDescription">HTML5-Elemente können durch selbst definierte Attribute erweitert werden. ...</p>
+                        <form action="" id="demoDefineAttr">
+                            
+                            <label for="basePriceInput">Baispreis für den Flug</label>
+                            <input type="number" id="basePriceInput">
+                            <fieldset>
+                                <legend>Upgrade-Selection</legend>
+                                <div class="radioWrapper">
+                                    <label for="dR1">Deluxe</label>
+                                    <input type="radio" id="dR1" class="upgradeSelector" name="classSelect" data-klass="Deluxe" data-priceFactor="4" checked>
+                                </div>
+                                <div class="radioWrapper">
+                                    <label for="dR2">Business</label>
+                                    <input type="radio" id="dR2" class="upgradeSelector" name="classSelect" data-klass="Business" data-priceFactor="2.5">
+                                </div>
+                                <div class="radioWrapper">
+                                    <label for="dR3">Premium-Economy</label>
+                                    <input type="radio" id="dR3" class="upgradeSelector" name="classSelect"data-klass="Premium-Economy" data-priceFactor="1.5">
+                                </div>
+                            </fieldset>
+                        </form>
+                        <div id="totalPriceOutput"></div>
+                        <aside class="articleAside">
+                            <h3 class="artAsideTitle">Weitere Infos finden Sie unter...</h3>
+                            <p class="artAsideContent"><a href="https://www.w3schools.com/tags/att_global_data.asp" class="artAsideLink">https://www.w3schools.com/tags/att_global_data.asp</a>.</p>
+                        </aside>
+                    </article>
+
                     <article class="demoArticle">
                         <h2>Ein Demo-Article</h2>
                         <p class="articleDescription">Dies ist ein Container vom Typ <code>article</code></p>
@@ -139,8 +169,6 @@
                             <p class="artAsideContent">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, id ipsum nisi dolorem magnam rerum incidunt ipsam dolor! Ab obcaecati earum quis hic et nam temporibus incidunt natus sed assumenda.</p>
                         </aside>
                     </article>
-
-                    
 
                     <aside class="sectAside">
                         <h2 class="sectAsideTitle">Zusätzliche Infos zur Sektion</h2>

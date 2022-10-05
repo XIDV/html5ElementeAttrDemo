@@ -20,4 +20,31 @@ document.addEventListener('DOMContentLoaded', dcl => {
             demoDialogModal.close();
         }
     });
+
+    document.querySelectorAll('.upgradeSelector').forEach(selector => {
+        selector.addEventListener('change', e => {
+            if(e.target.checked) {
+                printTotalPrice(e.target.dataset['klass'], e.target.dataset['pricefactor']);
+            }
+        });
+    });
+    
 });
+
+
+function printTotalPrice(klass, factor) {
+    console.log(klass , factor);
+    const totalPriceOutput = document.querySelector('#totalPriceOutput');
+    const basePriceInput = document.querySelector('#basePriceInput');
+    
+    if(totalPriceOutput.textContent != '') {
+        totalPriceOutput.textContent = '';
+    }
+
+    if(basePriceInput.value != '') {
+        totalPriceOutput.textContent = `Sie haben ${klass} ausgewählt. Gesamtsumme beträgt ${parseFloat(factor) * parseFloat(basePriceInput.value)}.`
+
+    } else {
+        totalPriceOutput.textContent = 'Bitte geben Sie einen Basispreis ein!';
+    }
+}
