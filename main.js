@@ -21,19 +21,27 @@ document.addEventListener('DOMContentLoaded', dcl => {
         }
     });
 
-    document.querySelectorAll('.upgradeSelector').forEach(selector => {
-        selector.addEventListener('change', e => {
-            if(e.target.checked) {
-                printTotalPrice(e.target.dataset['klass'], e.target.dataset['pricefactor']);
+    // eventListener f. d. Verarbeitung der Eingaben in demoDefineAttr und der data-Attribute
+    const basePriceInput = document.querySelector('#basePriceInput');
+    const upgradeSelectors = document.querySelectorAll('.upgradeSelector');
+    basePriceInput.addEventListener('change', e => {
+        upgradeSelectors.forEach(selector => {
+            if(selector.checked) {
+                printTotalPrice(selector.dataset['klass'], selector.dataset['pricefactor']);
             }
         });
     });
     
+    upgradeSelectors.forEach(upgradeSelector => {
+        upgradeSelector.addEventListener('change', e => {
+            if(upgradeSelector.checked) {  
+                printTotalPrice(upgradeSelector.dataset['klass'], upgradeSelector.dataset['pricefactor']);
+            }
+        });
+    });
 });
 
-
 function printTotalPrice(klass, factor) {
-    console.log(klass , factor);
     const totalPriceOutput = document.querySelector('#totalPriceOutput');
     const basePriceInput = document.querySelector('#basePriceInput');
     
