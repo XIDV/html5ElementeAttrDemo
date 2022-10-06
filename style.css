@@ -202,6 +202,11 @@ blockquote {
     font: italic 1rem sans-serif;
 }
 
+.demoMicrodata {
+    color: darkgray;
+    font-size: 1.5rem; 
+}
+
 code {
     font: bold var(--defautlFontSize) monospace;
 }

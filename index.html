@@ -29,6 +29,9 @@
                     <li class="nli"><a href="#dialogDemonstration" class="navLink">(Modale) Fenster mit <code>dialog</code></a></li>
                     <li class="nli"><a href="#figureAndFigcaption" class="navLink">Bilder (u. Videos) beschriften</a></li>
                     <li class="nli"><a href="#forceDownload" class="navLink">Download erzwingen</a></li>
+                    <li class="nli"><a href="#refuseTranslation" class="navLink">Übersetzung ausschließen</a></li>
+                    <li class="nli"><a href="#" class="navLink">Navlink 4</a></li>
+                    <li class="nli"><a href="#" class="navLink">Navlink 4</a></li>
                     <li class="nli"><a href="#" class="navLink">Navlink 4</a></li>
                     <li class="nli"><a href="#" class="navLink">Navlink 4</a></li>
                 </ul>
@@ -196,16 +199,49 @@
                         </aside>
                     </article>
 
+                    <article class="demoArticle" id="microdata">
+                        <h2>Mikrodaten</h2>
+                        <p class="articleDescription">Mit Hilfe der Attribute <code>itemscope</code>, <code>itemtype</code> und <code>itemprop</code>, können Inhalte/Daten derart ausgezeichnet werden, dass diese u. a. von Suchmaschinen besser &bdquo;verstanden&ldquo; werden können.</p>
+                        <p>Der nachfolgende Absatz wurde entprechend Ausgezeichnet.</p>
+                        <p class="demoMicrodata" itemscope itemtype="http://schema.org/Person">
+                            <span itemprop="name">Albert Einstein</span><br>
+                            geboren am <span itemprop="birthDate"><time datetime="1879-03-14">14. März 1879</time></span>
+                            in <span itemprop="birthPlace">Ulm</span><br>
+                            gestorben am <span itemprop="deathDate"><time datetime="1955-04-18"></time>18. April 1955</span>
+                            in <span itemprop="deathPlace">Princeton</span>.
+                        </p>
+                        <pre class="codeblock">
+                            <code language-html>
+&lt;p class="demoMicrodata" itemscope itemtype="http://schema.org/Person"&gt;
+    &lt;span itemprop="name"&gt;Albert Einstein&lt;/span&gt;&lt;br&gt; 
+    geboren am &lt;span itemprop="birthDate"&gt;
+    &lt;time datetime="1879-03-14"&gt; 14. März 1879&lt;/time&gt; &lt;/span&gt; 
+    in &lt;span itemprop="birthPlace"&gt; Ulm&lt;/span&gt;&lt;br&gt; 
+    gestorben am &lt;span itemprop="deathDate"&gt;
+    &lt;time datetime="1955-04-18"&gt; &lt;/time&gt; 18. April 1955&lt;/span&gt; 
+    in &lt;span itemprop="deathPlace"&gt; Princeton&lt;/span&gt; .
+&lt;/p&gt; 
+                            </code>
+                        </pre>
+                        <aside class="articleAside">
+                            <h3 class="artAsideTitle">Weitere Infos finden Sie unter...</h3>
+                            <p class="artAsideContent"><a href="https://schema.org/" class="artAsideLink">https://schema.org/</a> und ... <br>
+                            <a href="https://wiki.selfhtml.org/wiki/HTML/Attribute/itemscope" class="artAsideLink">https://wiki.selfhtml.org/wiki/HTML/Attribute/itemscope</a></p>
+
+                        </aside>
+                    </article>
+
                     <article class="demoArticle">
                         <h2>Ein Demo-Article</h2>
                         <p class="articleDescription">Dies ist ein Container vom Typ <code>article</code></p>
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus quisquam, optio hic ipsum dolore magni quo non dolorum quod consequuntur assumenda delectus voluptas et aut impedit rerum ipsam doloremque porro.
                         </p>
                         <aside class="articleAside">
-                            <h3 class="artAsideTitle">Weitere Infos ...</h3>
-                            <p class="artAsideContent">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, id ipsum nisi dolorem magnam rerum incidunt ipsam dolor! Ab obcaecati earum quis hic et nam temporibus incidunt natus sed assumenda.</p>
+                            <h3 class="artAsideTitle">Weitere Infos finden Sie unter...</h3>
+                            <p class="artAsideContent"></p>
                         </aside>
                     </article>
+
 
 
                     <aside class="sectAside">
