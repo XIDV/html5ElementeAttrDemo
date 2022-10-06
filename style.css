@@ -207,6 +207,25 @@ blockquote {
     font-size: 1.5rem; 
 }
 
+.ddTestArea {
+    display: flex;
+    justify-content: space-around;
+}
+
+.ddTestArea div {
+    width: 40%;
+    display: inherit;
+    justify-content: center;
+    align-items: center;
+    border: solid thin;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.ddTestArea img {
+    width: 100%;
+}
+
 code {
     font: bold var(--defautlFontSize) monospace;
 }
