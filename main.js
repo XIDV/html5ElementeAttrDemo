@@ -39,6 +39,53 @@ document.addEventListener('DOMContentLoaded', dcl => {
             }
         });
     });
+
+    // eventListener f. D&D-Demonstration
+    const dragObject = document.querySelector('#sourceContainer img');
+    const dragTarget = document.querySelector('#targetContainer');
+
+    // f. das dragObjekt
+    dragObject.addEventListener('dragstart', e => {
+        console.log('Start with drag');
+    });
+
+    dragObject.addEventListener('drag', e => {
+        console.log('Draging hard as fuck!!!');
+    });
+
+    dragObject.addEventListener('dragend', e => {
+        console.log('No more draging here.');
+    });
+    
+    // f. das dragTarget
+    dragTarget.addEventListener('dragenter', e => {
+        console.log('dragTarget feuert dragenter');
+        dragObject.style.opacity="50%";
+    });
+    
+    dragTarget.addEventListener('dragleave', e => {
+        console.log('dragTarget feuert dragleave');
+        dragObject.style.opacity="100%";
+    });
+
+    dragTarget.addEventListener('dragover', e => {
+        e.preventDefault();
+        // console.log('dragTarget feuert dragover');
+    });
+
+    dragTarget.addEventListener('drop', e => {
+        e.preventDefault();
+        
+        console.log('dragTarget feuert drop');
+
+        let data = e.dataTransfer.getData('text');
+        console.log(data);
+        const dropedImage = document.createElement('img');
+        dropedImage.setAttribute('src', data);
+        dragObject.remove();
+        e.target.appendChild(dropedImage);
+    });
+
 });
 
 function printTotalPrice(klass, factor) {
