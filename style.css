@@ -186,6 +186,22 @@ button {
     margin: 0 0 1rem 0;
 }
 
+.demoCompareContainer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+blockquote {
+    color: darkgray;
+    font: italic var(--defautlFontSize) serif;
+}
+
+.bqDescription {
+    font: italic 1rem sans-serif;
+}
+
 code {
     font: bold var(--defautlFontSize) monospace;
 }
