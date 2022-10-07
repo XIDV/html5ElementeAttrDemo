@@ -226,6 +226,10 @@ blockquote {
     width: 100%;
 }
 
+#dragableImg {
+    transition: opacity 300ms ease-in-out;
+}
+
 code {
     font: bold var(--defautlFontSize) monospace;
 }

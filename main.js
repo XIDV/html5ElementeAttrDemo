@@ -58,24 +58,27 @@ document.addEventListener('DOMContentLoaded', dcl => {
     // f. die ddContainer
     const ddContainers = document.querySelectorAll('.ddContainer');
     ddContainers.forEach((container) => {        
-        // container.addEventListener('dragenter', e => {
-        //     console.log('dragTarget feuert dragenter');
-        //     dragObject.style.opacity="50%";
-        // });
+        container.addEventListener('dragenter', e => {
+            if(dragObject.parentElement != e.target.parentElement) {
+                dragObject.style.opacity="50%";
+            }
+        });
         
-        // container.addEventListener('dragleave', e => {
-        //     console.log('dragTarget feuert dragleave');
-        //     dragObject.style.opacity="100%";
-        // });
+        container.addEventListener('dragleave', e => {
+            dragObject.style.opacity="100%";
+        });
 
         container.addEventListener('dragover', e => {
             e.preventDefault();
-            // console.log('dragTarget feuert dragover');
         });
 
         container.addEventListener('drop', e => {
             e.preventDefault();
-            e.target.appendChild(document.getElementById(e.dataTransfer.getData('text')));
+            const dragObjectID = e.dataTransfer.getData('text');
+            if(e.target.id != dragObjectID) {
+                e.target.appendChild(document.getElementById(dragObjectID));
+                dragObject.style.opacity="100%";
+            }
         });
     });
     
