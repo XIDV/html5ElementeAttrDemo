@@ -40,15 +40,11 @@ document.addEventListener('DOMContentLoaded', dcl => {
         });
     });
 
-    // eventListener f. D&D-Demonstration
-    const dragObject = document.querySelector('#sourceContainer img');
-    const dragTarget = document.querySelector('#targetContainer');
-
+    // eventListener f. D&D-Demonstration *************************************
     // f. das dragObjekt
+    const dragObject = document.querySelector('#dragableImg');
     dragObject.addEventListener('dragstart', e => {
-        
-        e.dataTransfer.setData('text', e.target.id);
-        
+        e.dataTransfer.setData('text', e.target.id);   
     });
 
     // dragObject.addEventListener('drag', e => {
@@ -59,36 +55,36 @@ document.addEventListener('DOMContentLoaded', dcl => {
     //     console.log('No more draging here.');
     // });
     
-    // f. das dragTarget
-    // dragTarget.addEventListener('dragenter', e => {
-    //     console.log('dragTarget feuert dragenter');
-    //     dragObject.style.opacity="50%";
-    // });
+    // f. die ddContainer
+    const ddContainers = document.querySelectorAll('.ddContainer');
+    ddContainers.forEach((container) => {        
+        // container.addEventListener('dragenter', e => {
+        //     console.log('dragTarget feuert dragenter');
+        //     dragObject.style.opacity="50%";
+        // });
+        
+        // container.addEventListener('dragleave', e => {
+        //     console.log('dragTarget feuert dragleave');
+        //     dragObject.style.opacity="100%";
+        // });
+
+        container.addEventListener('dragover', e => {
+            e.preventDefault();
+            // console.log('dragTarget feuert dragover');
+        });
+
+        container.addEventListener('drop', e => {
+            e.preventDefault();
+            e.target.appendChild(document.getElementById(e.dataTransfer.getData('text')));
+        });
+    });
     
-    // dragTarget.addEventListener('dragleave', e => {
-    //     console.log('dragTarget feuert dragleave');
-    //     dragObject.style.opacity="100%";
-    // });
-
-    dragTarget.addEventListener('dragover', e => {
-        e.preventDefault();
-        // console.log('dragTarget feuert dragover');
-    });
-
-    dragTarget.addEventListener('drop', e => {
-        e.preventDefault();
-        
-        let data = e.dataTransfer.getData('text');
-
-        // e.target.appendElementChild(data);
-
-        const dragedContent = document.getElementById(data);
-        
-        e.target.appendChild(dragedContent);
-    });
 
 });
 
+
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 function printTotalPrice(klass, factor) {
     const totalPriceOutput = document.querySelector('#totalPriceOutput');
     const basePriceInput = document.querySelector('#basePriceInput');
