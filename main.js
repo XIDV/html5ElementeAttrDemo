@@ -47,6 +47,7 @@ document.addEventListener('DOMContentLoaded', dcl => {
     // f. das dragObjekt
     dragObject.addEventListener('dragstart', e => {
         console.log('Start with drag');
+        console.log(e.dataTransfer);
     });
 
     dragObject.addEventListener('drag', e => {
