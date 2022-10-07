@@ -46,28 +46,29 @@ document.addEventListener('DOMContentLoaded', dcl => {
 
     // f. das dragObjekt
     dragObject.addEventListener('dragstart', e => {
-        console.log('Start with drag');
-        console.log(e.dataTransfer);
+        
+        e.dataTransfer.setData('text', e.target.id);
+        
     });
 
-    dragObject.addEventListener('drag', e => {
-        console.log('Draging hard as fuck!!!');
-    });
+    // dragObject.addEventListener('drag', e => {
+    //     console.log('Draging hard as fuck!!!');
+    // });
 
-    dragObject.addEventListener('dragend', e => {
-        console.log('No more draging here.');
-    });
+    // dragObject.addEventListener('dragend', e => {
+    //     console.log('No more draging here.');
+    // });
     
     // f. das dragTarget
-    dragTarget.addEventListener('dragenter', e => {
-        console.log('dragTarget feuert dragenter');
-        dragObject.style.opacity="50%";
-    });
+    // dragTarget.addEventListener('dragenter', e => {
+    //     console.log('dragTarget feuert dragenter');
+    //     dragObject.style.opacity="50%";
+    // });
     
-    dragTarget.addEventListener('dragleave', e => {
-        console.log('dragTarget feuert dragleave');
-        dragObject.style.opacity="100%";
-    });
+    // dragTarget.addEventListener('dragleave', e => {
+    //     console.log('dragTarget feuert dragleave');
+    //     dragObject.style.opacity="100%";
+    // });
 
     dragTarget.addEventListener('dragover', e => {
         e.preventDefault();
@@ -77,14 +78,13 @@ document.addEventListener('DOMContentLoaded', dcl => {
     dragTarget.addEventListener('drop', e => {
         e.preventDefault();
         
-        console.log('dragTarget feuert drop');
-
         let data = e.dataTransfer.getData('text');
-        console.log(data);
-        const dropedImage = document.createElement('img');
-        dropedImage.setAttribute('src', data);
-        dragObject.remove();
-        e.target.appendChild(dropedImage);
+
+        // e.target.appendElementChild(data);
+
+        const dragedContent = document.getElementById(data);
+        
+        e.target.appendChild(dragedContent);
     });
 
 });
