@@ -23,11 +23,9 @@ body > * {
     font-size: var(--defautlFontSize);
     background-color: white;
 }
-
 .mainWrapper {
     max-width: 1200px;
     display: flex;
-    flex-wrap: wrap;
     margin: 0 auto;
 }
 
@@ -50,8 +48,62 @@ header {
 
 .mainNav {
     background-color: #aaa;
-    width: 20%;
 }
+
+main {
+    padding: 0 2rem;
+}
+
+.siteFooter {
+    width: 100%;
+    display: inherit;
+    flex-wrap: inherit;
+    justify-content: space-between;
+    gap: .5rem;
+    color: white;
+    background-color: darkblue;
+}
+
+@media screen and (max-width: 1000px) {
+    /* TODO: */
+    .mainWrapper {
+        flex-direction: column;
+    }
+
+    .mainNav {
+        width: 100%;
+    }
+
+    main {
+        width: 100%;
+    }
+
+    .siteFooter {
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width: 1001px) {
+    /* TODO: */
+    .mainWrapper {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .mainNav {
+        background-color: #aaa;
+        width: 20%;
+    }
+
+    main {
+        width: 80%;
+    }
+
+    .siteFooter {
+        flex-direction: row;
+    }
+}
+
 
 .navList {
     padding: 0;
@@ -79,11 +131,6 @@ header {
 .mainNav .navLink:focus {
     color: red;
     text-decoration: underline;
-}
-
-main {
-    flex: 1;
-    padding: 0 2rem;
 }
 
 .sectionHeader {
@@ -207,13 +254,25 @@ blockquote {
     font-size: 1.5rem; 
 }
 
+pre {
+    overflow: hidden;
+}
+
+.codeblock code {
+    overflow: hidden;
+}
+
 .ddTestArea {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .ddTestArea div {
-    width: 40%;
+    width: clamp(15rem, 49%, 60rem);
+    height: 20rem;
     display: inherit;
     justify-content: center;
     align-items: center;
@@ -224,6 +283,7 @@ blockquote {
 
 .ddTestArea img {
     width: 100%;
+    height: 100%;
 }
 
 #dragableImg {
@@ -234,17 +294,32 @@ code {
     font: bold var(--defautlFontSize) monospace;
 }
 
-.siteFooter {
-    width: 100%;
-    display: inherit;
-    flex-wrap: inherit;
-    justify-content: center;
-    gap: .5rem;
-    color: white;
-    background-color: darkblue;
+.footerBox {
+    min-width: 30rem;
+    padding: 2rem;
+    margin: 1rem 0;
 }
 
-.footerBox {
-    width: 30%;
-    margin: 1rem 0;
+.footerBox * {
+    padding: 0;
+}
+
+.footerBox li {
+    display: block;
+}
+
+.footerBox a {
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 300ms ease-in-out;
+}
+
+.footerBox a:link,
+.footerBox a:visited {
+    color: lightgray;
+}
+
+.footerBox a:hover,
+.footerBox a:focus {
+    color: red;
 }
