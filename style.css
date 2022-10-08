@@ -14,7 +14,7 @@ html {
 
 body {
     font: 10px sans-serif;
-    background-color: black;
+    /* background-color: black; */
     padding: 0;
     margin: 0;
 }
@@ -211,6 +211,7 @@ button {
 }
 
 .artAsideLink {
+    word-wrap: break-word;
     transition: all 300ms ease-in-out;
 }
 
@@ -256,10 +257,7 @@ blockquote {
 
 pre {
     overflow: hidden;
-}
-
-.codeblock code {
-    overflow: hidden;
+    white-space: pre-wrap;
 }
 
 .ddTestArea {
@@ -295,9 +293,8 @@ code {
 }
 
 .footerBox {
-    min-width: 30rem;
-    padding: 2rem;
-    margin: 1rem 0;
+    min-width: 10rem;
+    padding: 0 2rem;
 }
 
 .footerBox * {
@@ -311,6 +308,7 @@ code {
 .footerBox a {
     font-weight: bold;
     text-decoration: none;
+    word-wrap: break-word;
     transition: all 300ms ease-in-out;
 }
 
